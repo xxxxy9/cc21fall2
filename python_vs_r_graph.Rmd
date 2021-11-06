@@ -6,6 +6,12 @@ Xingyu Wei
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r}
+# install.packages("jsonlite", repos="https://cran.rstudio.com/")
+library("jsonlite") # must be installed from source
+library(ggplot2) # For visualization
+library(ggpubr)
+```
 ## Description:
 
 We will show how to plot graphs in Python and compare data visualization between Python ('Matplotlib.pyplot' & 'Seaborn') and R ('ggplot2'), illustrated by an example. We use the same data set and the same types of graphs to show the code and output differences between Python and R.
@@ -16,11 +22,7 @@ Link: https://github.com/xxxxy9/5702CC
 
 ## R part:
 
-```{r}
-# install.packages("jsonlite", repos="https://cran.rstudio.com/")
-library("jsonlite") # must be installed from source
-library(ggplot2) # For visualization
-```
+
 
 ### Data:<br />
 Source: https://datahub.io/machine-learning/iris#data 
@@ -103,7 +105,7 @@ p2<- ggplot(df, aes( y=petallength, fill=class))+
     geom_boxplot() +
     facet_wrap(~class)+
     ylim(c(0,8))
-library(ggpubr)
+
 ggarrange(p1, p2, widths = c(4,4), labels = c('a', 'b'))
 
 ```
